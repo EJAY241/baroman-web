@@ -109,7 +109,10 @@
     </style>
 </head>
 <body>
+    
 <a href="javascript:history.back()" class="back-button">← Back</a>
+<form method= "POST" action="{{ route('register')}}">
+@csrf
     <div class="container">
     <div class="container" id="signup">
         <div class="alt-section">
@@ -119,13 +122,13 @@
         </div>
         <div class="right">
             <h2>Sign Up</h2>
-            <input type="text" class="input-field" placeholder="Full Name">
-            <input type="email" class="input-field" placeholder="Email">
-            <input type="password" class="input-field" placeholder="Password">
-            <input type="password" class="input-field" placeholder="Confirm Password">
+            <input type="text" class="input-field" placeholder="Full Name" :value = "old('full name')">
+            <input type="email" class="input-field" placeholder="Email" :value = "old('email')">
+            <input type="password" class="input-field" placeholder="Password" :value = "old('password')"> 
             <button class="btn">Sign Up</button>
         </div>
     </div>
     </div>
+    </form>
 </body>
 </html>

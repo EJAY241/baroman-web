@@ -110,15 +110,14 @@
 </head>
 <body>
 <a href="javascript:history.back()" class="back-button">← Back</a>
+<form method= "POST" action="{{ url('/login')}}">
+@csrf
     <div class="container">
         <div class="left">
             <h2>Sign In</h2>
-            <input type="text" class="input-field" placeholder="Username">
-            <input type="password" class="input-field" placeholder="Password">
-            <div class="remember">
-                <label><input type="checkbox"> Remember Me</label>
-                <a href="#">Forgot Password?</a>
-            </div>
+            <input type="text" class="input-field" placeholder="Username" :value = "old('username')">
+            <input type="password" class="input-field" placeholder="Password" :value = "old('password')">
+           
             <button class="btn">Sign In</button>
         </div>
         <div class="right">
@@ -127,5 +126,6 @@
             <a href="{{ route('register')}}" class="btn">Sign Up</a>
         </div>
     </div>
+    </form>
 </body>
 </html>
